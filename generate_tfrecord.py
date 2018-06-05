@@ -20,14 +20,14 @@ from object_detection.utils import dataset_util
 from collections import namedtuple, OrderedDict
 
 flags = tf.app.flags
-flags.DEFINE_string('csv_input', '', 'train/train.csv')
+flags.DEFINE_string('csv_input', '', 'test/test.csv')
 flags.DEFINE_string('output_path', '', './')
 FLAGS = flags.FLAGS
 
 
 # TO-DO replace this with label map
 def class_text_to_int(row_label):
-    if row_label == 'raccoon':
+    if row_label == 'hand':
         return 1
     else:
         None
@@ -82,7 +82,8 @@ def create_tf_example(group, path):
 
 def main(_):
     writer = tf.python_io.TFRecordWriter(FLAGS.output_path)
-    path = os.path.join(os.getcwd(), 'images')
+    # change to 'train' or 'test', accordingly
+    path = os.path.join(os.getcwd(), 'test')
     examples = pd.read_csv(FLAGS.csv_input)
     grouped = split(examples, 'filename')
     for group in grouped:
