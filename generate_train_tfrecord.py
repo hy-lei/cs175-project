@@ -20,8 +20,8 @@ from object_detection.utils import dataset_util
 from collections import namedtuple, OrderedDict
 
 flags = tf.app.flags
-flags.DEFINE_string('csv_input', '', 'test/test.csv')
-flags.DEFINE_string('output_path', '', './')
+flags.DEFINE_string('csv_input', 'models/model/train', '')
+flags.DEFINE_string('output_path', 'data/train.csv', 'output path')
 FLAGS = flags.FLAGS
 
 
@@ -83,7 +83,7 @@ def create_tf_example(group, path):
 def main(_):
     writer = tf.python_io.TFRecordWriter(FLAGS.output_path)
     # change to 'train' or 'test', accordingly
-    path = os.path.join(os.getcwd(), 'test')
+    path = os.path.join(os.getcwd(), 'models/model/train')
     examples = pd.read_csv(FLAGS.csv_input)
     grouped = split(examples, 'filename')
     for group in grouped:
