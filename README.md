@@ -2,7 +2,7 @@
 
 Pipeline Overview:
 1.	Data Cleaning and Generate TFRecord Files
-2.	Model Training and Test (at run time)
+2.	Model Training and Testing (at run time)
 3.	Export model for inference
 
 Data Cleaning and Generate TFRecord Files
