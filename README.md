@@ -1,4 +1,5 @@
 # cs175-project
+You may checkout the project report [here](https://i.cs.hku.hk/~hylei/FinalReport.pdf) to get a better understanding of the results.
 
 Pipeline Overview:
 1.	Data Cleaning and Generate TFRecord Files
